@@ -3,9 +3,14 @@ import json
 import random
 from datetime import datetime
 import os
+import redis
+import os
 
+if os.environ.get('VERCEL'):
+    pass
 app = Flask(__name__)
 app.secret_key = 'career_autopilot_secret_key'
+
 
 # Mock data for demonstration
 CAREER_PATHS = {
@@ -2061,3 +2066,4 @@ def toggle_goal():
 
 if __name__ == '__main__':
     app.run(debug=True, port=5000)
+
